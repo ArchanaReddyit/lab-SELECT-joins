@@ -1,4 +1,7 @@
 create table role(Id NUMBER(20), name varchar2(255) NOT NULL,primary key(Id));
+drop table skill;
+
+select * from skill;
 create table skill(Id NUMBER(20)primary key, description varchar2(255) NULL, name varchar(255) NOT NULL);
 create table post_type(Id NUMBER(20)primary key,name varchar2(255) NOT NULL);
 create table department(Id NUMBER(20)primary key, name varchar2(255) NOT NULL);
@@ -41,7 +44,7 @@ create table experience
   profile_id NUMBER(20) NOT NULL,
   FOREIGN KEY(profile_id) REFERENCES profile(Id)
 );
-
+select * from experience
 Alter table experience 
 RENAME COLUMN current TO currentvalue;
 
@@ -100,6 +103,8 @@ create table event
   organiser_id Number(20)NOT NULL,
   FOREIGN KEY(organiser_id) REFERENCES user_new(Id)
 );
+
+
 
 create table post
 (
